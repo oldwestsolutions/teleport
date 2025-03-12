@@ -323,71 +323,104 @@
 
         /* Update mobile styles */
         @media (max-width: 768px) {
+            /* Dashboard container */
             .dashboard {
-                padding: 80px 20px 20px;
-                width: 100%;
+                padding: 80px 15px 20px;
             }
 
+            /* Quick actions */
             .quick-actions {
-                grid-template-columns: 1fr;
-                gap: 15px;
-                padding: 0;
-                width: 100%;
-                max-width: 90%;
-                margin: 0 auto 20px;
+                display: block;
+                margin-bottom: 30px;
             }
 
             .action-btn {
                 width: 100%;
+                margin-bottom: 15px;
                 padding: 15px;
-                justify-content: center;
-                margin: 0 auto;
+                font-size: 1em;
             }
 
+            /* Dashboard grid */
             .dashboard-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                width: 100%;
-                max-width: 90%;
-                margin: 0 auto;
+                display: block;
             }
 
+            /* Cards */
             .card {
                 width: 100%;
-                margin: 0 auto;
+                margin-bottom: 20px;
                 padding: 20px;
                 min-height: auto;
             }
 
+            /* Chart card */
             .chart-card {
-                height: 300px;
-                padding: 20px;
+                height: 350px;
+                margin-bottom: 20px;
+            }
+
+            /* Card content */
+            .card h3 {
+                font-size: 1.2em;
+                margin-bottom: 15px;
+                text-align: center;
             }
 
             .stat-value {
+                font-size: 2em;
                 text-align: center;
+                margin: 15px 0;
             }
 
             .progress-bar {
-                width: 100%;
-                margin: 15px auto;
+                margin: 15px 0;
             }
 
+            /* Activity feed */
             .activity-feed {
-                padding: 10px 0;
+                max-height: none;
+                margin-bottom: 15px;
             }
 
+            .activity-item {
+                padding: 12px 0;
+            }
+
+            /* Form elements */
+            .form-control {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            /* Buttons */
+            .btn {
+                width: 100%;
+                margin: 10px 0;
+                padding: 12px;
+            }
+
+            /* Notifications */
             .notification {
-                left: 50%;
-                bottom: 20px;
-                transform: translateX(-50%) translateY(100px);
                 width: 90%;
-                max-width: 350px;
+                left: 50%;
+                transform: translateX(-50%) translateY(100px);
                 text-align: center;
+                padding: 15px;
             }
 
             .notification.show {
                 transform: translateX(-50%) translateY(0);
+            }
+
+            /* Spacing between sections */
+            .dashboard > * {
+                margin-bottom: 20px;
+            }
+
+            /* Center all text in cards */
+            .card p {
+                text-align: center;
             }
 
             nav {
