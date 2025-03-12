@@ -6,6 +6,33 @@
     <title>Dashboard - Teleport Communication</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* Add at the top of existing styles */
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        * {
+            box-sizing: border-box;
+            max-width: 100%;
+        }
+
+        .container {
+            width: 100%;
+            overflow-x: hidden;
+            margin: 0 auto;
+        }
+
+        .dashboard {
+            width: 100%;
+            overflow: hidden;
+        }
+
         /* Base styles */
         :root {
             --bg-color: #121212;
@@ -321,43 +348,77 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Update mobile styles */
+        /* Update existing mobile styles */
         @media (max-width: 768px) {
-            /* Dashboard container */
-            .dashboard {
-                padding: 80px 15px 20px;
+            .card, 
+            .action-btn, 
+            .chart-container,
+            .activity-feed,
+            .form-control,
+            .btn,
+            .progress-bar {
+                width: 100%;
+                max-width: 100%;
+                overflow: hidden;
+                margin-left: 0;
+                margin-right: 0;
             }
 
-            /* Quick actions */
+            .dashboard-grid,
             .quick-actions {
-                display: block;
-                margin-bottom: 30px;
+                width: 100%;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            /* Quick actions - vertical stack */
+            .quick-actions {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
             }
 
             .action-btn {
                 width: 100%;
-                margin-bottom: 15px;
-                padding: 15px;
-                font-size: 1em;
+                margin: 0;
             }
 
-            /* Dashboard grid */
+            /* Dashboard grid - vertical stack */
             .dashboard-grid {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                width: 100%;
             }
 
             /* Cards */
             .card {
                 width: 100%;
-                margin-bottom: 20px;
-                padding: 20px;
+                margin: 0 0 20px 0;
                 min-height: auto;
             }
 
             /* Chart card */
             .chart-card {
-                height: 350px;
-                margin-bottom: 20px;
+                width: 100%;
+                margin: 0 0 20px 0;
+            }
+
+            /* Remove any potential horizontal gaps */
+            .card, 
+            .action-btn, 
+            .chart-container {
+                max-width: 100%;
+            }
+
+            /* Ensure content doesn't cause horizontal scroll */
+            .activity-feed,
+            .form-control,
+            .btn,
+            .progress-bar {
+                max-width: 100%;
+                box-sizing: border-box;
             }
 
             /* Card content */
@@ -389,48 +450,10 @@
 
             /* Form elements */
             .form-control {
-                width: 100%;
-                margin: 10px 0;
+                margin: 10px auto;
             }
 
             /* Buttons */
-            .btn {
-                width: 100%;
-                margin: 10px 0;
-                padding: 12px;
-            }
-
-            /* Notifications */
-            .notification {
-                width: 90%;
-                left: 50%;
-                transform: translateX(-50%) translateY(100px);
-                text-align: center;
-                padding: 15px;
-            }
-
-            .notification.show {
-                transform: translateX(-50%) translateY(0);
-            }
-
-            /* Spacing between sections */
-            .dashboard > * {
-                margin-bottom: 20px;
-            }
-
-            /* Center all text in cards */
-            .card p {
-                text-align: center;
-            }
-
-            nav {
-                padding: 10px 20px;
-            }
-
-            .logo {
-                margin-left: 0;
-            }
-
             .btn {
                 margin-right: 0;
             }
@@ -452,6 +475,18 @@
                 max-width: 200px;
                 margin: 15px auto;
                 display: block;
+            }
+
+            nav {
+                padding: 10px 20px;
+            }
+
+            .logo {
+                margin-left: 0;
+            }
+
+            .btn {
+                margin-right: 0;
             }
         }
     </style>
