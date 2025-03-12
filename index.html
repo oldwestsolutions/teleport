@@ -826,7 +826,7 @@
                     <li><a href="#coverage">Coverage</a></li>
                     <li><a href="#bill-pay">Bill Pay</a></li>
                 </ul>
-                <a href="#" class="btn">Sign Up</a>
+                <a href="#" class="btn">Login</a>
             </nav>
         </div>
     </header>
@@ -879,7 +879,7 @@
                     </div>
                     <div class="feature-card">
                         <div class="feature-card-icon">
-                            <i class="fa-solid fa-lock-keyhole"></i>
+                            <i class="fa-solid fa-shield"></i>
                         </div>
                         <h3>Enhanced Security</h3>
                         <p>Advanced encryption and peer validation protocols ensure your data remains private and secure. Each connection is verified and monitored for suspicious activity.</p>
@@ -1466,7 +1466,7 @@
                     <ul class="bill-pay-features">
                         <li>
                             <div class="feature-icon">
-                                <i class="fas fa-lock"></i>
+                                <i class="fa-solid fa-shield-halved"></i>
                             </div>
                             <div class="feature-text">
                                 <h4>Bank-Level Security</h4>
@@ -1495,38 +1495,13 @@
                 </div>
                 
                 <div class="bill-pay-form">
-                    <h3>Make a Payment</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="paymentType">Payment Type</label>
-                            <select class="form-control" id="paymentType">
-                                <option value="">Select Payment Type</option>
-                                <option value="internet">Internet Bill</option>
-                                <option value="mobile">Mobile Bill</option>
-                                <option value="tv">TV Service</option>
-                                <option value="utilities">Utilities</option>
-                                <option value="other">Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="accountNumber">Account Number</label>
-                            <input type="text" class="form-control" id="accountNumber" placeholder="Enter account number">
-                        </div>
-                        <div class="form-group">
-                            <label for="amount">Amount ($)</label>
-                            <input type="number" class="form-control" id="amount" placeholder="Enter amount">
-                        </div>
-                        <div class="form-group">
-                            <label for="paymentDate">Payment Date</label>
-                            <input type="date" class="form-control" id="paymentDate">
-                        </div>
-                        <div class="form-group">
-                            <label for="useRewards">
-                                <input type="checkbox" id="useRewards"> Use Reward Points (Available: 2,350)
-                            </label>
-                        </div>
-                        <button type="submit" class="btn" style="width: 100%;">Process Payment</button>
-                    </form>
+                    <h3>Access Your Account</h3>
+                    <div style="text-align: center; padding: 20px;">
+                        <i class="fa-solid fa-user-circle" style="font-size: 48px; color: var(--accent-red); margin-bottom: 20px;"></i>
+                        <p style="margin-bottom: 25px; color: var(--text-secondary);">Please login to access bill payment features and manage your account.</p>
+                        <a href="#" class="btn" style="width: 100%; margin-bottom: 15px;">Login</a>
+                        <p style="font-size: 14px; color: var(--text-secondary);">Don't have an account? <a href="#" style="color: var(--accent-red); text-decoration: none;">Sign up now</a></p>
+                    </div>
                 </div>
             </div>
         </div>
