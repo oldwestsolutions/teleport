@@ -78,6 +78,7 @@
             position: relative;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            scroll-behavior: smooth;
         }
 
         /* Russian-inspired patterns */
@@ -822,6 +823,93 @@
                 padding-right: 20px;
             }
         }
+
+        /* Update feature grid styles */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+        }
+
+        /* Mobile styles update */
+        @media (max-width: 768px) {
+            /* Container adjustments */
+            .container {
+                padding: 0;
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            /* Feature cards - force single column */
+            .feature-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                padding: 20px;
+                width: 100%;
+            }
+
+            .feature-card {
+                width: 100%;
+                margin: 0;
+                padding: 25px 20px;
+                text-align: center;
+            }
+
+            .feature-card h3 {
+                font-size: 1.3em;
+                margin: 10px 0;
+            }
+
+            .feature-card p {
+                font-size: 0.95em;
+                line-height: 1.4;
+                margin: 0;
+                color: var(--text-secondary);
+            }
+
+            .feature-card-icon {
+                font-size: 24px;
+                margin-bottom: 10px;
+                color: var(--accent-red);
+            }
+
+            /* Ensure proper spacing between sections */
+            section {
+                padding: 40px 0;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            /* Section headings */
+            section h2 {
+                padding: 0 20px;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+
+            /* Smooth scroll behavior */
+            html {
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            /* Prevent content overflow */
+            * {
+                max-width: 100vw;
+                box-sizing: border-box;
+            }
+
+            /* Improve touch scrolling */
+            .feature-grid,
+            .rewards-grid,
+            .bill-pay-container {
+                -webkit-overflow-scrolling: touch;
+                overflow-y: visible;
+                overflow-x: hidden;
+            }
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -868,34 +956,37 @@
                     <div class="particle"></div>
                 </div>
                 
-                <div class="hero-grid">
+                <div class="feature-grid">
                     <div class="feature-card">
                         <div class="feature-card-icon">
-                            <i class="fa-solid fa-tower-broadcast"></i>
+                            <i class="fas fa-mobile-alt"></i>
                         </div>
-                        <h3>P2P Wireless Internet</h3>
-                        <p>Connect directly with other users in our network to share bandwidth, reducing costs and increasing coverage. Our revolutionary technology ensures secure and fast connections without traditional infrastructure.</p>
+                        <h3>P2P & Mobile</h3>
+                        <p>Instant transfers and mobile payments with zero fees. Send money globally.</p>
                     </div>
+                    
                     <div class="feature-card">
                         <div class="feature-card-icon">
-                            <i class="fa-solid fa-signal"></i>
-                        </div>
-                        <h3>Mobile Connectivity</h3>
-                        <p>Teleport's P2P technology extends to mobile networks, allowing you to connect to nearby users for improved signal and reduced carrier dependency, all while earning rewards.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-card-icon">
-                            <i class="fa-solid fa-wallet"></i>
-                        </div>
-                        <h3>Bill Pay Rewards</h3>
-                        <p>Our unique reward system lets you earn credits by participating in the network. Pay your bills with earned credits or receive cashback rewards when making payments through our platform.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-card-icon">
-                            <i class="fa-solid fa-shield"></i>
+                            <i class="fas fa-shield-alt"></i>
                         </div>
                         <h3>Enhanced Security</h3>
-                        <p>Advanced encryption and peer validation protocols ensure your data remains private and secure. Each connection is verified and monitored for suspicious activity.</p>
+                        <p>Military-grade encryption keeps your transactions and data protected 24/7.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <h3>Bill Pay Rewards</h3>
+                        <p>Earn points on every bill payment. Redeem for cash back or premium perks.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-card-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Global Network</h3>
+                        <p>Access our worldwide network for seamless connectivity anywhere.</p>
                     </div>
                 </div>
             </div>
