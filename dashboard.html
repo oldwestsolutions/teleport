@@ -321,37 +321,69 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Add after existing styles */
+        /* Update mobile styles */
         @media (max-width: 768px) {
             .dashboard {
-                padding: 80px 15px 20px;
+                padding: 80px 20px 20px;
+                width: 100%;
             }
 
             .quick-actions {
                 grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 0;
+                width: 100%;
+                max-width: 90%;
+                margin: 0 auto 20px;
+            }
+
+            .action-btn {
+                width: 100%;
+                padding: 15px;
+                justify-content: center;
+                margin: 0 auto;
             }
 
             .dashboard-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+                width: 100%;
+                max-width: 90%;
+                margin: 0 auto;
             }
 
             .card {
-                min-height: 250px;
+                width: 100%;
+                margin: 0 auto;
+                padding: 20px;
+                min-height: auto;
             }
 
             .chart-card {
-                grid-column: span 1;
                 height: 300px;
+                padding: 20px;
             }
 
             .stat-value {
-                font-size: 2em;
+                text-align: center;
+            }
+
+            .progress-bar {
+                width: 100%;
+                margin: 15px auto;
+            }
+
+            .activity-feed {
+                padding: 10px 0;
             }
 
             .notification {
-                width: 90%;
                 left: 50%;
+                bottom: 20px;
                 transform: translateX(-50%) translateY(100px);
+                width: 90%;
+                max-width: 350px;
+                text-align: center;
             }
 
             .notification.show {
@@ -359,17 +391,34 @@
             }
 
             nav {
-                padding: 10px 15px;
+                padding: 10px 20px;
             }
 
-            .logo h1 {
-                font-size: 24px;
+            .logo {
+                margin-left: 0;
             }
 
-            .logo-icon {
-                width: 35px;
-                height: 35px;
-                font-size: 20px;
+            .btn {
+                margin-right: 0;
+            }
+
+            /* Center align all text in cards */
+            .card h3,
+            .card p {
+                text-align: center;
+            }
+
+            /* Center align form elements */
+            .form-control {
+                margin: 10px auto;
+            }
+
+            /* Ensure buttons are centered and proper width */
+            .card .btn {
+                width: 100%;
+                max-width: 200px;
+                margin: 15px auto;
+                display: block;
             }
         }
     </style>
