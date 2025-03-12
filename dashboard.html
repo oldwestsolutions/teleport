@@ -320,6 +320,58 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* Add after existing styles */
+        @media (max-width: 768px) {
+            .dashboard {
+                padding: 80px 15px 20px;
+            }
+
+            .quick-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                min-height: 250px;
+            }
+
+            .chart-card {
+                grid-column: span 1;
+                height: 300px;
+            }
+
+            .stat-value {
+                font-size: 2em;
+            }
+
+            .notification {
+                width: 90%;
+                left: 50%;
+                transform: translateX(-50%) translateY(100px);
+            }
+
+            .notification.show {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            nav {
+                padding: 10px 15px;
+            }
+
+            .logo h1 {
+                font-size: 24px;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
