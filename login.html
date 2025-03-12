@@ -6,34 +6,7 @@
     <title>Login - Teleport Communication</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Add at the top of existing styles */
-        html, body {
-            overflow-x: hidden;
-            width: 100%;
-            position: relative;
-            margin: 0;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        * {
-            box-sizing: border-box;
-            max-width: 100%;
-        }
-
-        .container {
-            width: 100%;
-            overflow-x: hidden;
-            margin: 0 auto;
-        }
-
-        .login-section {
-            width: 100%;
-            overflow: hidden;
-        }
-
-        /* Copy base styles from index.html */
+        /* Base styles */
         :root {
             --bg-color: #121212;
             --bg-secondary: #1e1e1e;
@@ -46,23 +19,18 @@
             --border-radius: 4px;
         }
 
-        * {
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            height: 100%;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-family: 'Roboto', 'Arial', sans-serif;
         }
 
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Header styles from index.html */
+        /* Header styles */
         header {
             background-color: var(--bg-secondary);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
@@ -71,11 +39,19 @@
             z-index: 100;
         }
 
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
         .logo {
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 15px 0;
             text-decoration: none;
         }
 
@@ -93,22 +69,28 @@
         }
 
         .logo h1 {
-            font-size: 28px;
-            font-weight: 900;
             color: var(--accent-red);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin: 0;
+            font-size: 28px;
         }
 
-        /* Login Form Styles */
+        /* Login section styles */
+        .login-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(229, 57, 53, 0.1) 0%, rgba(13, 71, 161, 0.1) 100%);
+        }
+
         .login-container {
             background-color: var(--bg-secondary);
+            border-radius: 8px;
             padding: 40px;
-            border-radius: var(--border-radius);
             width: 100%;
             max-width: 400px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-            border-top: 3px solid var(--accent-red);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
 
         .login-header {
@@ -119,16 +101,13 @@
         .login-header i {
             font-size: 48px;
             color: var(--accent-red);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .login-header h2 {
             font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .login-header p {
-            color: var(--text-secondary);
+            margin: 0;
+            color: var(--text-color);
         }
 
         .form-group {
@@ -138,13 +117,13 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            font-weight: 500;
+            color: var(--text-secondary);
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 15px;
-            background-color: rgba(0, 0, 0, 0.2);
+            padding: 12px;
+            background-color: var(--bg-color);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: var(--border-radius);
             color: var(--text-color);
@@ -155,29 +134,25 @@
         .form-control:focus {
             outline: none;
             border-color: var(--accent-red);
-            box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.3);
+            box-shadow: 0 0 0 2px rgba(229, 57, 53, 0.2);
         }
 
         .btn {
             width: 100%;
             padding: 12px;
-            background: var(--accent-red);
+            background-color: var(--accent-red);
             color: var(--text-color);
             border: none;
             border-radius: var(--border-radius);
-            cursor: pointer;
+            font-size: 16px;
             font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            cursor: pointer;
             transition: var(--transition);
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(229, 57, 53, 0.3);
+            background-color: #c62828;
+            transform: translateY(-1px);
         }
 
         .login-footer {
@@ -192,51 +167,36 @@
         }
 
         .login-footer a:hover {
-            color: var(--gold);
+            color: #ff5252;
         }
 
-        /* Update existing mobile styles */
+        /* Responsive design */
         @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
             .login-container {
-                width: 90%;
-                margin: 0 auto;
-                padding: 20px;
-                overflow: hidden;
-            }
-
-            .login-header i {
-                font-size: 48px;
-            }
-
-            .login-header h2 {
-                font-size: 1.5em;
-            }
-
-            .form-control {
-                font-size: 14px;
+                padding: 30px 20px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <div class="logo-icon">T</div>
-                    <h1>Teleport</h1>
-                </a>
-            </nav>
-        </div>
+        <nav>
+            <a href="index.html" class="logo">
+                <div class="logo-icon">T</div>
+                <h1>Teleport</h1>
+            </a>
+        </nav>
     </header>
 
     <section class="login-section">
-        <div class="pattern"></div>
         <div class="login-container">
             <div class="login-header">
-                <i class="fa-solid fa-user-circle"></i>
+                <i class="fas fa-user-circle"></i>
                 <h2>Welcome Back</h2>
-                <p>Login to access your Teleport account</p>
             </div>
             <form id="loginForm" onsubmit="handleLogin(event)">
                 <div class="form-group">
@@ -259,7 +219,6 @@
     <script>
         function handleLogin(event) {
             event.preventDefault();
-            // Redirect to dashboard regardless of credentials
             window.location.href = 'dashboard.html';
         }
     </script>
